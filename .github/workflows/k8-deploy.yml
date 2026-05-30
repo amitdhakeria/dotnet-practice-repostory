@@ -22,7 +22,7 @@ jobs:
             - name: Push Docker Image
               run: docker push ${{ secrets.DOCKERHUB_USER }}/myapp:v4
 
-            # Setup the kubeconfig
+            # Setup the kubeconfig and will change it
 
             - name: Set up kubeconfig
               run: |
