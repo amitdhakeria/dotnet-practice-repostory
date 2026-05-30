@@ -32,7 +32,7 @@ jobs:
                 script: |
                   kubectl get nodes
                   docker pull ${{ secrets.DOCKERHUB_USER }}/myapp:v4
-                  ubectl set image deployment/myapp-deployment myapp=${{ secrets.DOCKERHUB_USER }}/myapp:v4
+                  kubectl set image deployment/myapp-deployment myapp=${{ secrets.DOCKERHUB_USER }}/myapp:v4
                   kubectl rollout status deployment/myapp-deployment --timeout=120s
                   kubectl get pods -o wide
 
